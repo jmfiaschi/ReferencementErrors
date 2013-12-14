@@ -26,7 +26,6 @@ class IndexController extends AbstractActionController
     	$config = $this->getServiceLocator()->get('config');
     	$blockCipher->setKey($config['referencement_errors']['key']);
     	
-    	//$viewModel->setVariables($variables);
     	$exception = $this->Params()->fromQuery('exception');
     	if($exception){
     		$exception = base64_decode($exception);
@@ -35,6 +34,7 @@ class IndexController extends AbstractActionController
 	    	$viewModel->setVariables($exception);
     	}
     	$this->getResponse()->setStatusCode($exception['code']);
+    	$viewModel->setTemplate('error/index');
         return $viewModel;
     }
 }
