@@ -16,7 +16,7 @@ add this line in your composer.json :
 ...
 "require" : {
 ...
-"jmfiaschi/referencement-errors" : "dev-master",
+"jmfiaschi/zf2-referencement-errors" : "dev-master",
 ...
 },
 ...
@@ -28,12 +28,12 @@ Use the terminal and run this line in your application
 $ php composer.phar update
 ```
 
-Enable the module by adding `ReferencementErrors` key to your `application.config.php` file like this :
+Enable the module by adding `Zf2ReferencementErrors` key to your `application.config.php` file like this :
 ```sh
 $env = getenv('APP_ENV') ?: 'production';
 ...
 if ($env == 'production') {
-	$modules[] = 'ReferencementErrors';
+	$modules[] = 'Zf2ReferencementErrors';
 }
 ```
 
